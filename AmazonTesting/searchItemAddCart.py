@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
-service_obj = Service("/Users/ruthelia/Downloads/chromedriver_mac_arm64/chromedriver")
+service_obj = Service("/Users/ruthelia/Downloads/chromedriver-mac-arm64 2/chromedriver")
 driver = webdriver.Chrome(service=service_obj, options=chrome_options)
 
 driver.implicitly_wait(5)

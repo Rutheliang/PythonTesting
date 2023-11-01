@@ -3,12 +3,12 @@ import logging
 
 def test_loggingDemo(): # move to baseclass.py
 
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger(__name__) # capture test case file name
 
     fileHandler = logging.FileHandler('logfile.log') # what to print / where to print
     formatter = logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s") # what format
     fileHandler.setFormatter(formatter) # connecting the formatter and filehandler
-    logger.addHandler(fileHandler)  # filehandler object / what format or what file should be send
+    logger.addHandler(fileHandler)  # filehandler object / what format or what file should be sent
 
     logger.setLevel(logging.CRITICAL) # hierarchy / order / level
     # if you set "info" then debug will not be displayed

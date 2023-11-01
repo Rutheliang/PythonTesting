@@ -4,7 +4,7 @@ from pytestDemo.BaseClass import BaseClass
 
 
 @pytest.mark.usefixtures("dataLoad")
-class TestExample2(BaseClass): #inherit from parent to chil
+class TestExample2(BaseClass): #inherit from parent to child
 
     def test_editProfile(self, dataLoad): # need data as returning value / no need to declare dataload if your not returning data
         log = self.getLogger()

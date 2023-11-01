@@ -8,10 +8,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
-service_obj = Service("/Users/ruthelia/Downloads/chromedriver")
+#service_obj = Service()
+service_obj = Service("/Users/ruthelia/Downloads/chromedriver-mac-arm64 2/chromedriver")
 driver = webdriver.Chrome(service=service_obj, options=chrome_options)
-#service_obj = Service("/Users/ruthelia/Downloads/geckodriver 2")
-#driver = webdriver.Firefox(service=service_obj)
 
 driver.implicitly_wait(5)
 
@@ -24,7 +23,7 @@ products = driver.find_elements(By.XPATH, "//div[@class='card h-100']")
 for product in products:
     productName = product.find_element(By.XPATH, "div/h4/a").text  # chaining from "//div[@class='card h-100']"
     if productName == "Blackberry":
-        product.find_element(By.XPATH, "div/button").click()
+        product.find_element(By.XPATH, "div/button").click() # chaining from "//div[@class='card h-100']"
 
 driver.find_element(By.CSS_SELECTOR, "a[class='nav-link btn btn-primary']").click()
 

@@ -12,10 +12,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
-service_obj = Service("/Users/ruthelia/Downloads/chromedriver")
+service_obj = Service("/Users/ruthelia/Downloads/chromedriver_mac_arm64 (4)/chromedriver")
 driver = webdriver.Chrome(service=service_obj, options=chrome_options)
 
-driver.implicitly_wait(5)
+driver.implicitly_wait(15)
 
 driver.maximize_window()
 driver.get("https://www.allegiantair.com/")
@@ -29,13 +29,16 @@ if driver.find_element(By.XPATH, "//div[@class='Box-s8oj9r-0 hzaPoz']").is_displ
 
 driver.find_element(By.XPATH, "//div[@data-hook='flight-search-origin']").click()
 
-driver.find_element(By.XPATH, "//div[@data-hook='flight-search-origin_AUS']").click()
+#wait = WebDriverWait(driver, 10)
+#wait.until(expected_conditions.element_to_be_clickable((By.XPATH, "//div[@data-hook='flight-search-origin_AUS']")))
+#driver.find_element(By.XPATH, "//div[@data-hook='flight-search-origin_AUS']").click()
 
-#action = ActionChains(driver)
-#action.move_to_element(driver.find_element(By.XPATH, "//div[@data-hook='flight-search-origin_AUS']")).click().perform()
+time.sleep(2)
+action = ActionChains(driver)
+action.move_to_element(driver.find_element(By.XPATH, "//div[@data-hook='flight-search-origin_AUS']")).click().perform()
 #action.move_to_element(driver.find_element(By.XPATH, "//div[@id='react-select-origin-option-1-5']")).click().perform()
-#action.move_to_element(driver.find_element(By.LINK_TEXT, "Austin, TX (AUS)")).click().perform() -> not working
 
+#time.sleep(2)
 driver.find_element(By.XPATH, "//div[@data-hook='flight-search-destination']").click()
 action = ActionChains(driver)
 action.move_to_element(driver.find_element(By.XPATH, "//div[@data-hook='flight-search-destination_AVL']")).click().perform()
@@ -49,14 +52,14 @@ driver.find_element(By.XPATH, "//button[@data-hook='flight-search-date-picker_ex
 time.sleep(2)
 dates = driver.find_elements(By.XPATH, "//div[@data-hook='flight-search-date-picker_calendar-0']/div[3]/button")
 for date in dates:
-    if date.get_attribute("data-hook") == "flight-search-date-picker_calendar-0_select-day-24":
+    if date.get_attribute("data-hook") == "flight-search-date-picker_calendar-0_select-day-26":
         date.click()
         break
 
 time.sleep(2)
 dates = driver.find_elements(By.XPATH, "//div[@data-hook='flight-search-date-picker_calendar-1']/div[3]/button")
 for date in dates:
-    if date.get_attribute("data-hook") == "flight-search-date-picker_calendar-1_select-day-24":
+    if date.get_attribute("data-hook") == "flight-search-date-picker_calendar-1_select-day-2":
         date.click()
         break
 

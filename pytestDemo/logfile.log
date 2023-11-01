@@ -32,3 +32,6 @@
 2023-01-24 18:56:03,588 :CRITICAL :pytestDemo.test_logging :Critical issue
 2023-01-24 19:10:59,462 :INFO : test_editProfile :Ruthel
 2023-01-24 19:10:59,462 :INFO : test_editProfile :ruthel@yahoo.com
+2023-08-22 08:58:46,510 :INFO : test_editProfile :Ruthel
+2023-08-22 08:58:46,510 :INFO : test_editProfile :ruthel@yahoo.com
+2023-08-22 08:58:46,512 :CRITICAL :pytestDemo.test_logging :Critical issue
